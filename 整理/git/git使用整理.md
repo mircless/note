@@ -6,8 +6,16 @@ notebook: git
 
 ## 开始
 
-![1-1][gitHub]
-![1-1](https://github.com/mircless/note/blob/master/.img/1-1.jpg)
+![1-1][gitHub/1-1]
+![1-1](./.img/1-1.jpg)
+
+```javascript
+function fn () {
+    console.log(123)
+    return sss
+}
+ ```
 
 
-[gitHub]: https://github.com/mircless/note/blob/master/.img/1-1.jpg
+
+[gitHub/1-1]: ./.img/1-1.jpg
