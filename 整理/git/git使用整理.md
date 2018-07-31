@@ -96,6 +96,13 @@ git的代码管理分为三个部分：
   1. `git log`查看提交历史，以便确定要回退到哪个版本（commit之后的即为commit_id）
   2. `git reset --hard <commit_id>`：回退到commit_id版本
 
+## 7、查看信息
+- `git status` 显示有变更的文件
+- `git log` 显示当前分支的版本历史
+- `git log --stat` 显示commit历史，以及每次commit发生变更的文件
+- `git log -S <keyword>` 搜索提交历史，根据关键词
+- `git diff --shortstat "@{0 day ago}"` 显示今天你写了多少行代码
+
 # 四、配置
 - `git config -l`：列出所有的git配置
 - `git config core.ignorecase false`：配置git不忽略大小写（默认忽略）
@@ -125,4 +132,5 @@ git的代码管理分为三个部分：
    7. `git push origin --delete develop-conflict` 删除远程`develop-conflict`分支
    - 
    - 有一种错误或者说不推荐的做法是在往develop上合之前，先将develop和到自己分支上，在自己分支解决完冲突在往develop上和，这种方法也能达到目的，但是在开发用分支下，很多人提交到develop上的代码并不一定正确，这样会将所有develop的代码同步到自己分支上，很容易出现一些问题，所以是不推荐的
-     
+
+# 六、开发过程中遇到的bug 
