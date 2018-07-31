@@ -1,7 +1,7 @@
 ---
 title: git 使用整理
-tags: 
-notebook: git
+tags: git
+notebook: tool
 ---
 # 一、git初识
 
@@ -90,21 +90,26 @@ git的代码管理分为三个部分：
   - 查看本地特定分支与远程分支的差异：`git diff master origin/feature/reserve-3.4`
 
 ## 6、修改撤销
-- `git checkout -- <文件名>`：丢弃工作区的修改，就是让这个文件回到最近一次`git commit`或`git add`时的状态
+- `git checkout -- readme.txt`：丢弃工作区的修改，就是让readme.txt这个文件回到最近一次`git commit`或`git add`时的状态
+  - 一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态
+  - 一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
 - `git reset HEAD <文件名>`：把暂存区的修改撤销掉，重新放回工作区
 - `git reset --hard <commit_id>`：git版本回退，回退到特定的commit_id版本
   1. `git log`查看提交历史，以便确定要回退到哪个版本（commit之后的即为commit_id）
   2. `git reset --hard <commit_id>`：回退到commit_id版本
+- `git reset --hard HEAD^` 回退到上一个版本，在git中git用`HEAD`表示当前版本，也就是最新的提交，上一个版本就是`HEAD^`,上上个版本就是`HEAD^^`,当然往上100个版本写100个^比较容易数不过来，所以写成`HEAD~100`
 
 ## 7、查看信息
 - `git status` 显示有变更的文件
-- `git log` 显示当前分支的版本历史
+- `git log` 显示当前分支显示从最近到最远的提交日志
 - `git log --stat` 显示commit历史，以及每次commit发生变更的文件
 - `git log -S <keyword>` 搜索提交历史，根据关键词
 - `git diff --shortstat "@{0 day ago}"` 显示今天你写了多少行代码
 
 # 四、配置
 - `git config -l`：列出所有的git配置
+- `git config --global user.name "<name>"`：设置自己的用户名
+- `git config --global user.email "<email>"`：设置自己的email
 - `git config core.ignorecase false`：配置git不忽略大小写（默认忽略）
 
 # 五、团队git开发策略
